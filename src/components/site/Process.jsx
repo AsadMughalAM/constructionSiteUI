@@ -62,13 +62,13 @@ export default function Process() {
               >
                 <span
                   aria-hidden="true"
-                  className="font-display pointer-events-none absolute right-4 top-2 text-[clamp(6rem,18vw,16rem)] font-extrabold leading-none text-foreground/[0.06] md:right-10"
+                  className="font-display pointer-events-none absolute right-4 top-2 text-[clamp(4rem,18vw,16rem)] font-extrabold leading-none text-foreground/[0.06] md:right-10"
                 >
                   {step.digit}
                 </span>
                 <span aria-hidden="true" className="size-3 bg-primary" />
                 <div className="relative max-w-2xl">
-                  <h3 className="font-display text-3xl font-extrabold uppercase tracking-tight md:text-5xl">
+                  <h3 className="font-display break-words text-[clamp(1.125rem,5vw,1.875rem)] font-extrabold uppercase tracking-tight md:text-5xl">
                     {step.title}
                   </h3>
                   <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">

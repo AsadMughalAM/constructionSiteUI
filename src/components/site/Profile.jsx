@@ -106,28 +106,35 @@ export default function Profile() {
           </ul>
         </div>
 
-        <div className="relative flex h-[400px] items-center justify-center sm:h-[560px] lg:h-[640px] xl:h-[700px]">
+        {/*
+          The book's layout box (width x 2.2 for the open spread) is wider than
+          small viewports. It lives on an absolute layer so it never widens the
+          page; the visual size is controlled with scale per breakpoint.
+        */}
+        <div className="relative h-[400px] w-full sm:h-[560px] lg:h-[640px] xl:h-[700px]">
           {/* Floor shadow */}
           <div
             aria-hidden="true"
-            className="absolute bottom-10 left-1/2 h-12 w-80 -translate-x-1/2 rounded-full bg-black/30 blur-2xl sm:bottom-6 lg:bottom-4"
+            className="absolute bottom-10 left-1/2 h-12 w-80 max-w-[80%] -translate-x-1/2 rounded-full bg-black/30 blur-2xl sm:bottom-6 lg:bottom-4"
           />
-          <motion.div
-            initial={reduce ? false : { y: 48, rotate: -3, opacity: 0 }}
-            whileInView={{ y: 0, rotate: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="origin-center scale-[0.5] sm:scale-90 lg:scale-100 xl:scale-110"
-          >
-            <InteractiveBook
-              coverImage={bookCover}
-              bookTitle="Meridian"
-              bookAuthor="Capability Statement"
-              pages={PAGES}
-              width={360}
-              height={500}
-            />
-          </motion.div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              initial={reduce ? false : { y: 48, rotate: -3, opacity: 0 }}
+              whileInView={{ y: 0, rotate: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="origin-center scale-[0.45] sm:scale-90 lg:scale-100 xl:scale-110"
+            >
+              <InteractiveBook
+                coverImage={bookCover}
+                bookTitle="Meridian"
+                bookAuthor="Capability Statement"
+                pages={PAGES}
+                width={360}
+                height={500}
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

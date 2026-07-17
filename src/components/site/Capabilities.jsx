@@ -73,7 +73,7 @@ export default function Capabilities() {
                   finePointer && 'lg:hidden'
                 )}
               />
-              <h3 className="font-display flex-1 text-2xl font-bold uppercase tracking-tight text-muted-foreground transition-all duration-300 group-hover:translate-x-2 group-hover:text-foreground md:text-4xl lg:text-5xl">
+              <h3 className="font-display min-w-0 flex-1 break-words text-[clamp(1rem,5.2vw,1.5rem)] font-bold uppercase tracking-tight text-muted-foreground transition-all duration-300 group-hover:translate-x-2 group-hover:text-foreground md:text-4xl lg:text-5xl">
                 {cap.title}
               </h3>
               <p className="hidden max-w-xs text-sm leading-relaxed text-muted-foreground md:block">
